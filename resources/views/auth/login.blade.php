@@ -8,7 +8,7 @@
     <meta content="" name="description"/>
     <meta content="" name="author"/>
 
-    <title>Gymie - Login</title>
+    <title>Gym - Login</title>
 
     <!-- BEGIN CORE FRAMEWORK -->
     <link href="{{ URL::asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
@@ -29,6 +29,7 @@
     <link href="{{ URL::asset('assets/css/responsive.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/css/mystyle.css') }}" rel="stylesheet"/>
     <!-- END THEME STYLES -->
+
 </head>
 <body class="auth-page height-auto bg-grey-600">
 <div class="wrapper animated fadeInDown">
@@ -68,7 +69,7 @@
                 <button type="submit" class="btn btn-dark bg-light-green-500 padding-10 btn-block color-white"><i class="ion-log-in"></i> Sign in</button>
             </div>
         </form>
-        <div class="panel-footer padding-md no-margin no-border bg-grey-900 text-center color-white">&copy; 2016 Gymie by LUBUS</div>
+        <div class="panel-footer padding-md no-margin no-border bg-grey-900 text-center color-white" id="copyright"></div>
     </div>
 </div>
 
@@ -87,5 +88,11 @@
 
 <!-- gymie -->
 <script src="{{ URL::asset('assets/js/gymie.js') }}" type="text/javascript"></script>
+<script>
+    $(document).ready(function(){
+        $('#copyright').html("&copy;" + new Date().getFullYear() + " Gym management by Sudip Thapa")
+    })
+</script>
+
 </body>
 </html>
