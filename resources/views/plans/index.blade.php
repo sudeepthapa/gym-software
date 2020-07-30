@@ -44,7 +44,7 @@
                                     <tr>
                                         <th>Plan Code</th>
                                         <th>Plan Name</th>
-                                        <th>Service Name</th>
+                                        {{-- <th>Service Name</th> --}}
                                         <th>Plan Details</th>
                                         <th>Days</th>
                                         <th>Amount</th>
@@ -57,7 +57,7 @@
                                         <tr>
                                             <td>{{ $plan->plan_code}}</td>
                                             <td>{{ $plan->plan_name}}</td>
-                                            <td>{{ $plan->service->name}}</td>
+                                            {{-- <td>{{ $plan->service()->name}}</td> --}}
                                             <td>{{ $plan->plan_details}}</td>
                                             <td>{{ $plan->days}}</td>
                                             <td>{{ $plan->amount}}</td>

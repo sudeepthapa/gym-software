@@ -83,21 +83,21 @@ Route::group(['prefix' => 'members', 'middleware' => ['auth']], function () {
     Route::get('{id}/transfer', ['middleware' => ['permission:manage-gymie|manage-enquiries|transfer-enquiry'], 'uses' => 'MembersController@transfer']);
 });
 
-//SmsController
-Route::group(['prefix' => 'sms', 'middleware' => ['auth']], function () {
-    Route::get('triggers', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@triggersIndex']);
-    Route::post('triggers/update', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@triggerUpdate']);
-    Route::get('events', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@eventsIndex']);
-    Route::get('events/create', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@createEvent']);
-    Route::post('events', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@storeEvent']);
-    Route::get('events/{id}/edit', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@editEvent']);
-    Route::post('events/{id}/update', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@updateEvent']);
-    Route::post('events/{id}/destroy', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@destroyEvent']);
-    Route::get('send', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@send']);
-    Route::post('shoot', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@shoot']);
-    Route::get('log', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@logIndex']);
-    Route::get('log/refresh', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@logRefresh']);
-});
+// //SmsController
+// Route::group(['prefix' => 'sms', 'middleware' => ['auth']], function () {
+//     Route::get('triggers', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@triggersIndex']);
+//     Route::post('triggers/update', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@triggerUpdate']);
+//     Route::get('events', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@eventsIndex']);
+//     Route::get('events/create', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@createEvent']);
+//     Route::post('events', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@storeEvent']);
+//     Route::get('events/{id}/edit', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@editEvent']);
+//     Route::post('events/{id}/update', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@updateEvent']);
+//     Route::post('events/{id}/destroy', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@destroyEvent']);
+//     Route::get('send', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@send']);
+//     Route::post('shoot', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@shoot']);
+//     Route::get('log', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@logIndex']);
+//     Route::get('log/refresh', ['middleware' => ['permission:manage-gymie|manage-sms'], 'uses' => 'SmsController@logRefresh']);
+// });
 
 //enquiries
 Route::group(['prefix' => 'enquiries', 'middleware' => ['auth']], function () {
