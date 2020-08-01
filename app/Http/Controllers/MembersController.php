@@ -433,7 +433,7 @@ class MembersController extends Controller
     public function transfer($id, Request $request)
     {
         // For Tax calculation
-        JavaScript::put([
+        JavaScriptFacade ::put([
             'taxes' => \Utilities::getSetting('taxes'),
             'gymieToday' => Carbon::today()->format('Y-m-d'),
             'servicesCount' => Service::count(),
