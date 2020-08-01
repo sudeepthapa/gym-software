@@ -236,50 +236,6 @@
             </div>
 
 
-            <!-- SMS Settings -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel no-border">
-                        <div class="panel-title">
-                            <div class="panel-head font-size-15"><i class="fa fa-file-text-o"></i> SMS</div>
-                        </div>
-
-                        <div class="panel-body">
-                            <div class="row"><!--Main row start-->
-                                <div class="col-sm-12">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                {!! Form::label('sms','Turn SMS on?') !!}
-                                                {!! Form::select('sms',array('0' => 'No', '1' => 'Yes'),$settings['sms'],['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'sms']) !!}
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                {!! Form::label('primary_contact','Primary contact') !!}
-                                                {!! Form::text('primary_contact',$settings['primary_contact'],['class'=>'form-control', 'id' => 'primary_contact']) !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @role('Gymie')
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                {!! Form::label('sms_request','SMS Request') !!}
-                                                {!! Form::select('sms_request',array('0' => 'Not requested', '1' => 'Requested'),$settings['sms_request'],['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'sms_request']) !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @endrole
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
             <!-- Form Submission -->
             <div class="row">
                 <div class="col-sm-2 pull-right">

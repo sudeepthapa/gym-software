@@ -197,7 +197,7 @@
             @permission(['manage-gymie','view-dashboard-charts'])
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="panel">
+                    {{-- <div class="panel">
                         <div class="panel-title">
                             <div class="panel-head"><i class="fa fa-comments-o"></i>SMS Log</div>
                         </div>
@@ -236,10 +236,7 @@
                             </div>
                             @include('dashboard._index.smsLog', ['smslogs' => $smslogs])
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
+                    </div> --}}
                     <div class="panel bg-white">
                         <div class="panel-title">
                             <div class="panel-head">Members Per Plan</div>
@@ -255,6 +252,9 @@
                             @endif
                         </div>
                     </div>
+                </div>
+
+                <div class="col-lg-6">
                 </div>
             </div>
 
