@@ -95,7 +95,7 @@ class Member extends Model implements HasMedia
     //Scope Queries
     public function scopeIndexQuery($query, $sorting_field, $sorting_direction, $drp_start, $drp_end)
     {
-        $sorting_field = ($sorting_field != null ? $sorting_field : 'created_at');
+        $sorting_field = ($sorting_field != null ? $sorting_field : 'id');
         $sorting_direction = ($sorting_direction != null ? $sorting_direction : 'desc');
 
         if ($drp_start == null or $drp_end == null) {
