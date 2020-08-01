@@ -217,21 +217,25 @@ var gymie = (function ($) {
 				}, function () {
 					$.ajax({
 						url: gotoUrl,
-						type: "POST"
+						type: "POST",
+						headers: {
+							'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+						}
+					
 					})
-						.done(function (data) {
-							swal({
-								title: "Done",
-								type: "success"
-							}, function () {
-								location.reload();
-							});
-						})
-						.error(function (data) {
-							swal("Oops", "We couldn't connect to the server!", "error");
-						});
-				});
-			}
+					.done(function (data) {
+						swal({
+							title: "Done",
+							type: "success"
+						}, function () {
+							location.reload();
+					})
+					.error(function (data) {
+						swal("Oops", "We couldn't connect to the server!", "error");
+					});
+				})
+			})
+		}
 		},
 
 		/* --------------------------------- */
@@ -271,7 +275,11 @@ var gymie = (function ($) {
 					}, function () {
 						$.ajax({
 							url: deleteUrl,
-							type: "POST"
+							type: "POST",
+							headers: {
+								'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+							}
+						
 						})
 							.done(function (data) {
 								swal({
