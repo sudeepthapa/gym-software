@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta content="" name="description"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="" name="author"/>
 
     <title>Young</title>
@@ -86,7 +87,7 @@
                         <i class="ion-home"></i> <span>Dashboard</span>
                     </a>
                 </li>
-
+                @role('Gymie')
                 @permission(['manage-gymie','manage-enquiries','view-enquiry'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('enquiries*',true) }}">
                     <a href="#">
@@ -100,6 +101,7 @@
                     </ul>
                 </li>
                 @endpermission
+                @endrole
 
                 @permission(['manage-gymie','manage-members','view-member'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('members*',true) }}">
@@ -151,20 +153,6 @@
                     </ul>
                 </li>
                 @endpermission
-
-                {{-- @permission(['manage-gymie','manage-sms'])
-                <li class="nav-dropdown {{ Utilities::setActiveMenu('sms*',true) }}">
-                    <a href="#">
-                        <i class="ion-ios-paper"></i> <span>SMS</span>
-                    </a>
-                    <ul>
-                        <li class="{{ Utilities::setActiveMenu('sms/triggers') }}"><a href="{{ action('SmsController@triggersIndex') }}">Triggers</a></li>
-                        <li class="{{ Utilities::setActiveMenu('sms/events') }}"><a href="{{ action('SmsController@eventsIndex') }}">Schedule message</a></li>
-                        <li class="{{ Utilities::setActiveMenu('sms/send') }}"><a href="{{ action('SmsController@send') }}">Send message</a></li>
-                        <li class="{{ Utilities::setActiveMenu('sms/log') }}"><a href="{{ action('SmsController@logIndex') }}">Log</a></li>
-                    </ul>
-                </li>
-                @endpermission --}}
 
                 @permission(['manage-gymie','manage-invoices','view-invoice'])
                 <li class="nav-dropdown {{ Utilities::setActiveMenu('invoices*',true) }}">
